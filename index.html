@@ -156,7 +156,7 @@ const TASKS = [
         "label": "Wasserstromstärke",
         "type": "number",
         "correct": 3,
-        "unit": "L/s",
+        "unit": "l/s",
         "tip": "Teilt 72 Liter durch 24 Sekunden."
       },
       {
@@ -187,7 +187,7 @@ const TASKS = [
       "Wie viele Liter passieren die Messstelle in genau einer Sekunde?",
       "Rechnet 72 ÷ 24. Überlegt beim Modell: Sind die beweglichen Elektronen erst nach dem Anschließen der Batterie im Metalldraht vorhanden?"
     ],
-    "solution": "72 L ÷ 24 s = 3 L/s. Die beweglichen Elektronen sind im Metalldraht bereits vorhanden. Er muss nicht erst von der Batterie mit Elektronen gefüllt werden. Deshalb passt ein bereits gefüllter Wasserkreislauf besser als ein leerer Schlauch.",
+    "solution": "72 l ÷ 24 s = 3 l/s. Die beweglichen Elektronen sind im Metalldraht bereits vorhanden. Er muss nicht erst von der Batterie mit Elektronen gefüllt werden. Deshalb passt ein bereits gefüllter Wasserkreislauf besser als ein leerer Schlauch.",
     "log": "Das Wassermodell veranschaulicht die Idee „Menge pro Zeit“. Ein leerer Schlauch passt jedoch nicht zum Metalldraht: Dessen bewegliche Elektronen sind bereits vorhanden."
   },
   {
@@ -857,7 +857,7 @@ function numeric(raw,unit){
  const factors={a:1,ma:0.001,'µa':0.000001};
  if(supplied){
   if(Object.hasOwn(factors,unit.toLowerCase())&&Object.hasOwn(factors,supplied))value*=factors[supplied]/factors[unit.toLowerCase()];
-  else if(!(unit==='L/s'&&supplied==='l/s'))return {kind:'invalid'};
+  else if(!(unit.toLowerCase()==='l/s'&&supplied==='l/s'))return {kind:'invalid'};
  }
  return {kind:'value',value};
 }
